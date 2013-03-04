@@ -511,9 +511,9 @@ _destroy: function() {
 			<p>A good widget provides a solid base with callbacks for customisation.</p>
 		<pre class="brush: js; toolbar: false;">
 var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), price = $("&lt;span&gt;"),
-	activation = $("#activation").button({icons:{primary:"ui-icon-search"}});
-activation.click(function() {
+	activation = $("#activation").button({icons:{primary:"ui-icon-search"}}).click(function() {
 	if ( cheeses.is(":aj-filterable") ) {
+		register.removeClass("ui-widget-header cheese").hide();
 		return cheeses.filterable("destroy");
 	}
 	cheeses.filterable({
@@ -1093,6 +1093,7 @@ var total = $("#total"), cheeses = $("#cheeses"), register = $("#register"), pri
 	activation = $("#activation").button({icons:{primary:"ui-icon-search"}});
 activation.click(function() {
 	if (cheeses.is(":aj-filterable")) {
+		register.removeClass("ui-widget-header cheese").hide();
 		return cheeses.filterable("destroy");
 	}
 	cheeses.filterable({
